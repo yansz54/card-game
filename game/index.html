@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Sigils — a duel of cards</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="table">
+  <header id="hud">
+    <div class="life-box enemy-life" id="enemyLifeBox">
+      <span class="life-name" id="enemyName">RIVAL · Kestrel</span>
+      <span class="life-hearts" id="enemyHearts" aria-label="Rival life"></span>
+      <span class="life-num" id="enemyLifeNum">20</span>
+    </div>
+    <div id="roundBox"><span id="roundLabel">ROUND 1</span><span id="manaLabel">◆ 1 / 1</span></div>
+    <div class="life-box player-life" id="playerLifeBox">
+      <span class="life-name">YOU</span>
+      <span class="life-hearts" id="playerHearts" aria-label="Your life"></span>
+      <span class="life-num" id="playerLifeNum">20</span>
+    </div>
+  </header>
+
+  <section id="enemyRow" aria-label="Rival hand and board">
+    <div id="enemyHand" class="hand enemy-hand"></div>
+    <div id="enemyBoard" class="board"></div>
+  </section>
+
+  <div id="midline">
+    <div id="log" aria-live="polite"></div>
+    <div id="decks">
+      <div class="deck-pile" id="enemyDeck"><span id="enemyDeckCount">24</span></div>
+      <div class="deck-pile" id="playerDeck"><span id="playerDeckCount">24</span></div>
+    </div>
+  </div>
+
+  <section id="playerRow" aria-label="Your board and hand">
+    <div id="playerBoard" class="board"></div>
+    <div id="playerHand" class="hand player-hand"></div>
+  </section>
+
+  <footer id="controls">
+    <button id="endTurnBtn" type="button">END TURN ⏎</button>
+    <span id="hint">Click a card to play it · 1–7 select · Enter ends turn</span>
+    <button id="muteBtn" type="button" aria-label="Toggle sound">♪</button>
+  </footer>
+
+  <div id="overlay" class="hidden">
+    <div id="overlayCard">
+      <h1 id="overlayTitle">EMBER SIGILS</h1>
+      <p id="overlaySub">A duel of cards. Outwit Kestrel, the rival sigil-keeper.</p>
+      <div id="overlayBody"></div>
+      <button id="overlayBtn" type="button">PLAY</button>
+      <p id="overlayKeys">Mouse: click cards · Keyboard: 1–7 select, Enter end turn, R restart</p>
+    </div>
+  </div>
+  <div id="errlog" aria-hidden="true"></div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
